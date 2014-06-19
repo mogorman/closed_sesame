@@ -6,7 +6,8 @@
 * pin 3,5,7,9 on daughter board are gnd
 * 9600 baud bus
 
-pin 01 NC
+DAUGHTER BOARD
+pin 01 NC GND
 pin 02 to pin 5 u1 pin 7 u2
 pin 03 GND
 pin 04 pin6 on u1 pin 6 u2
@@ -15,11 +16,29 @@ Pin 06 rx
 pin 07 GND
 pin 08 tx
 pin 09 GND
-pin 10 pin 8 on u2 pin 8 on u1
-pin 11 NC
-pin 12 NC
-pin 13 cap to ground
-pin 14 cap to ground
+pin 10 vcc 3.3v
+pin 11 NC 3.3v
+pin 12 NC GND?
+pin 13 cap to ground  Raw battery voltage 
+pin 14 cap to ground  Raw battery voltage
+
+main BOARD
+MCU IS 40 pin
+
+pin 01 NC NOWHERE
+pin 02 mcu pin 10
+pin 03 GND
+pin 04 mcu pin 11
+pin 05 GND
+Pin 06 mcu pin 23
+pin 07 GND
+pin 08 mcu pin 24
+pin 09 GND
+pin 10 vcc 3.3v
+pin 11 NC 3.3v
+pin 12 ???
+pin 13 Raw battery voltage 
+pin 14 Raw battery voltage
 
 traffic
 0xbd 0x0f 0x03 0xff 0x0f 0x03 0xcf
@@ -235,9 +254,27 @@ GARBAGE
 
 so i dont know why but this seems to work reliably 
 UNLOCK door 0xbd 0x04 0x03 0xe7 0x05 0x1a 
+            0xbd 0x04 0x09 0xe7 0x05 0x10
+
 LOCK door 0xbd 0x04 0x0c 0xe7 0x03 0x13
+ADD CODE 1234 7th byte is number
+0xbd 0x0a 0x0f 0xe7 0x0b 0x00 0x01 0x12 0x12 0x34 0x34 0x17
+DELETE CODE 1234 second last byte is number 
+0xbd 0x06 0x11 0xe7 0x0d 0x00 0x01 0x03
+
+
 
 dont forget to apply voltage
 
 
 2mm or 0.08" header spacing
+
+
+decoding packet 
+0xbd 0x04 0x03 0xe7 0x05 0x1a
+0xbd = mcu address / my return address
+0x04 = byte length
+0x03 = sequence number 
+0xe7 = my return address / mcu address
+0x05 = payload
+0x1a = checksum?
