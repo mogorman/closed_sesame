@@ -6,7 +6,22 @@
 * pin 3,5,7,9 on daughter board are gnd
 * 9600 baud bus
 
-Pin 6 traffic
+pin 01 NC
+pin 02 to pin 5 u1 pin 7 u2
+pin 03 GND
+pin 04 pin6 on u1 pin 6 u2
+pin 05 GND
+Pin 06 rx
+pin 07 GND
+pin 08 tx
+pin 09 GND
+pin 10 pin 8 on u2 pin 8 on u1
+pin 11 NC
+pin 12 NC
+pin 13 cap to ground
+pin 14 cap to ground
+
+traffic
 0xbd 0x0f 0x03 0xff 0x0f 0x03 0xcf
 0xbd 0x0f 0x03 0xc0
 0xbd 0x0f 0x03 0xc0
@@ -221,3 +236,8 @@ GARBAGE
 so i dont know why but this seems to work reliably 
 UNLOCK door 0xbd 0x04 0x03 0xe7 0x05 0x1a 
 LOCK door 0xbd 0x04 0x0c 0xe7 0x03 0x13
+
+dont forget to apply voltage
+
+
+2mm or 0.08" header spacing
