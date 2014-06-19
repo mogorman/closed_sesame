@@ -280,4 +280,41 @@ decoding packet
 0x03 = sequence number 
 0xe7 = my return address / mcu address
 0x05 = payload
-0x1a = checksum?
+0x1a = checksum
+
+checksum is an lrc
+        uint8_t checksum = 0xFF;
+        int i;
+        for (i = 1; i < message_length; i++) {
+                printf("Byte = %02X Checksum = %02X\n", message[i], checksum);
+                checksum ^= message[i];
+        }
+
+
+urn:schemas-micasaverde-com:device:DoorLock:1
+D_DoorLock1.xml
+82,220,0,4,64,3,R,B,RS,W1,|32S,76S,78S:2,98S,99S,112S,113S:1,114S,117S,128S,133S,134S,139S,152S,
+
+http://wiki.micasaverde.com/index.php/Luup_UPnP_Variables_and_Actions#DoorLock1
+
+0x03 lock
+0x05 unlock
+0x07 status
+
+ it looks like it echos back  your command with success
+3:4:    BD:04:02:AA:03:50:
+
+4:5:    BD:04:03:AA:05:57:
+5:6:    BD:04:04:AA:03:56:
+
+6:7:    BD:04:05:AA:05:51:
+7:8:    BD:04:06:AA:03:54:
+
+wrong address error?
+BD:05:14:55:03:02:BA:
+
+status response request
+BD:05:C9:AA:07:01:9F:
+01  is locked 
+00 is in the middle aka didnt turn completely
+02 is open

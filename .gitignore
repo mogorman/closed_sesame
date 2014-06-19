@@ -1,0 +1,17 @@
+*.sch~
+*.pcb-
+*.hex
+*.wav
+hardware/*.png
+hardware/bom
+hardware/gerbers
+hardware/hackvana_gerbers
+hardware/order
+hardware/*.ps
+hardware/*.zip
+hardware/*.pdf
+hardware/xy
+hardware/*
+firmware/build/*
+boards/rev_11.1
+boards/rev_12
