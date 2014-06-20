@@ -36,7 +36,7 @@ if [ "$New_closed_sesame" == "0" ]; then
     echo "No changes to closed_sesame don't bother saving image."
 else
     copy_files board.png ~/artifacts/closed_sesame/board.png
-    cp *.zip gerbers.zip
+    zip -r gerbers.zip gerbers/
     copy_files gerbers.zip ~/artifacts/closed_sesame/gerbers.zip
 fi
 
@@ -57,7 +57,7 @@ if [ "$?" != "0" ]; then
 fi
 cd bin
 
-copy_files application.hex ~/artifacts/pig/application.hex
+copy_files application.hex ~/artifacts/closed_sesame/application.hex
 
 cd ..
 
