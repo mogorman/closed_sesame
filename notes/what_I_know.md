@@ -8,9 +8,9 @@
 
 DAUGHTER BOARD
 pin 01 NC GND
-pin 02 to pin 5 u1 pin 7 u2
+pin 02 to pin 5 u1 pin 7 u2 SDA
 pin 03 GND
-pin 04 pin6 on u1 pin 6 u2
+pin 04 pin6 on u1 pin 6 u2 SCL
 pin 05 GND
 Pin 06 rx
 pin 07 GND
