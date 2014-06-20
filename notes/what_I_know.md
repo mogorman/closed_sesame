@@ -321,3 +321,10 @@ BD:05:C9:AA:07:01:9F:
 
 
 Compatible with Kwikset 909, 910, 911 and 912 models version my module would be compatible with
+
+
+
+600 mils +30 mils + 30 mils
+
+660 - 132 -132 
+660 - 264 = 396
