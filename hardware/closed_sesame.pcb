@@ -6,7 +6,7 @@ FileVersion[20070407]
 PCB["closed_sesame" 600000 500000]
 
 Grid[5000.0 0 0 1]
-Cursor[286633 247470 0.000000]
+Cursor[255000 265000 0.000000]
 PolyArea[200000000.000000]
 Thermal[0.500000]
 DRC[600 600 600 600 1500 600]
@@ -1406,7 +1406,7 @@ Element["" "0805" "R2" "10k" 226129 208897 -4607 6850 0 100 ""]
 
 	)
 
-Element["" "abs07_crystal" "U2" "32.768khz" 238224 254446 0 -7874 0 100 ""]
+Element["" "abs07_crystal" "U2" "32.768khz" 255000 265000 0 -7874 0 100 ""]
 (
 	Pad[-5512 -1378 -5512 1378 3150 1200 3750 "1" "1" "square"]
 	Pad[5512 -1378 5512 1378 3150 1200 3750 "2" "2" "square"]
@@ -1554,6 +1554,60 @@ Element["" "2mm_spaced_14" "CONN1" "unknown" 199856 289000 -32730 -4000 0 100 ""
 	Pin[102362 0 6000 2000 6600 3500 "" "14" "edge2"]
 
 	)
+Rat[222586 208504 0 209211 213152 0  ""]
+Rat[222586 208504 0 275609 227193 0  ""]
+Rat[275609 227193 0 279743 237430 0  ""]
+Rat[285649 257509 0 285059 267744 0  ""]
+Rat[276594 242549 0 266358 239594 0  ""]
+Rat[293523 237430 0 297659 227193 0  ""]
+Rat[225000 184607 0 242914 189607 0  ""]
+Rat[242914 189607 0 229672 208504 0  ""]
+Rat[229672 208504 0 266358 242744 0  ""]
+Rat[266358 242744 0 266358 249044 0  ""]
+Rat[266358 249044 0 276594 248454 0  ""]
+Rat[276594 248454 0 276594 244517 0  ""]
+Rat[276594 248454 0 286633 247470 0  ""]
+Rat[286633 247470 0 296673 246486 0  ""]
+Rat[296673 246486 0 306909 245894 0  ""]
+Rat[306909 245894 0 333212 194341 5  ""]
+Rat[333212 194341 5 333212 184341 5  ""]
+Rat[265526 191764 0 296673 240580 0  ""]
+Rat[296673 240580 0 306909 236444 0  ""]
+Rat[293523 257509 0 297659 267744 0  ""]
+Rat[291554 257509 0 294509 267744 0  ""]
+Rat[287617 257509 0 288209 267744 0  ""]
+Rat[289586 257509 0 291359 267744 0  ""]
+Rat[279743 257509 0 275609 267744 0  ""]
+Rat[281712 257509 0 278759 267744 0  ""]
+Rat[283680 257509 0 281909 267744 0  ""]
+Rat[234959 160469 0 265526 161197 0  ""]
+Rat[265526 161197 0 285059 227193 0  ""]
+Rat[285059 227193 0 285649 237430 0  ""]
+Rat[296673 254360 0 306909 258494 0  ""]
+Rat[287617 237430 0 288209 227193 0  ""]
+Rat[289586 237430 0 291359 227193 0  ""]
+Rat[242045 160469 0 333212 234341 5  ""]
+Rat[276594 240580 0 266358 236444 0  ""]
+Rat[333212 214341 5 281909 227193 0  ""]
+Rat[281909 227193 0 283680 237430 0  ""]
+Rat[333212 224341 5 281712 237430 0  ""]
+Rat[281712 237430 0 278759 227193 0  ""]
+Rat[276594 252391 0 266358 255344 0  ""]
+Rat[266358 255344 0 249488 263622 0  ""]
+Rat[276594 254360 0 266358 258494 0  ""]
+Rat[266358 258494 0 260512 263622 0  ""]
+Rat[272612 191764 0 250000 189607 0  ""]
+Rat[217914 184607 0 209211 230818 0  ""]
+Rat[209211 230818 0 266358 245894 0  ""]
+Rat[266358 245894 0 266358 252194 0  ""]
+Rat[266358 245894 0 276594 246486 0  ""]
+Rat[276594 246486 0 276594 250423 0  ""]
+Rat[276594 250423 0 296673 252391 0  ""]
+Rat[296673 252391 0 296673 248454 0  ""]
+Rat[296673 248454 0 306909 249044 0  ""]
+Rat[306909 249044 0 306909 255344 0  ""]
+Rat[306909 249044 0 333212 204341 5  ""]
+Rat[217914 184607 0 272612 161197 0  ""]
 Layer(1 "top")
 (
 )
@@ -1616,58 +1670,39 @@ Layer(10 "silk")
 )
 NetList()
 (
-	Net("unnamed_net3" "(unknown)")
-	(
-		Connect("R5-2")
-		Connect("LED1-2")
-	)
-	Net("Serial_reset" "(unknown)")
-	(
-		Connect("CONN2-6")
-		Connect("C1-2")
-	)
 	Net("Button" "(unknown)")
 	(
-		Connect("S1-1")
 		Connect("R2-1")
+		Connect("S1-1")
 		Connect("U1-32")
 	)
-	Net("Uart_Tx" "(unknown)")
+	Net("CS" "(unknown)")
 	(
-		Connect("CONN2-5")
-		Connect("U1-31")
+		Connect("U1-12")
 	)
-	Net("Uart_Rx" "(unknown)")
+	Net("Disp_on" "(unknown)")
 	(
-		Connect("CONN2-4")
-		Connect("U1-30")
-	)
-	Net("Reset" "(unknown)")
-	(
-		Connect("C1-1")
-		Connect("R1-1")
-		Connect("U1-29")
-	)
-	Net("SCL" "(unknown)")
-	(
-		Connect("U1-28")
-	)
-	Net("SDA" "(unknown)")
-	(
-		Connect("U1-27")
+		Connect("U1-2")
 	)
 	Net("Disp_reset" "(unknown)")
 	(
 		Connect("U1-25")
 	)
+	Net("GND" "(unknown)")
+	(
+		Connect("C10-2")
+		Connect("CONN2-1")
+		Connect("CONN2-2")
+		Connect("R2-2")
+		Connect("R5-1")
+		Connect("U1-3")
+		Connect("U1-5")
+		Connect("U1-21")
+	)
 	Net("Indicator" "(unknown)")
 	(
 		Connect("LED1-1")
 		Connect("U1-24")
-	)
-	Net("Sck" "(unknown)")
-	(
-		Connect("U1-17")
 	)
 	Net("Miso" "(unknown)")
 	(
@@ -1677,68 +1712,87 @@ NetList()
 	(
 		Connect("U1-15")
 	)
-	Net("PB2" "(unknown)")
-	(
-		Connect("U1-14")
-	)
 	Net("PB1" "(unknown)")
 	(
 		Connect("U1-13")
 	)
-	Net("CS" "(unknown)")
+	Net("PB2" "(unknown)")
 	(
-		Connect("U1-12")
-	)
-	Net("PD7" "(unknown)")
-	(
-		Connect("U1-11")
-	)
-	Net("PD6" "(unknown)")
-	(
-		Connect("U1-10")
+		Connect("U1-14")
 	)
 	Net("PD5" "(unknown)")
 	(
 		Connect("U1-9")
 	)
-	Net("unnamed_net2" "(unknown)")
+	Net("PD6" "(unknown)")
 	(
-		Connect("U2-2")
-		Connect("U1-8")
+		Connect("U1-10")
 	)
-	Net("unnamed_net1" "(unknown)")
+	Net("PD7" "(unknown)")
 	(
-		Connect("U2-1")
-		Connect("U1-7")
+		Connect("U1-11")
 	)
-	Net("Vcc" "(unknown)")
+	Net("Reset" "(unknown)")
 	(
-		Connect("C10-1")
-		Connect("S1-2")
-		Connect("CONN2-3")
-		Connect("R1-2")
-		Connect("U1-20")
-		Connect("U1-18")
-		Connect("U1-6")
-		Connect("U1-4")
+		Connect("C1-1")
+		Connect("R1-1")
+		Connect("U1-29")
 	)
-	Net("GND" "(unknown)")
+	Net("Sck" "(unknown)")
 	(
-		Connect("C10-2")
-		Connect("R5-1")
-		Connect("R2-2")
-		Connect("CONN2-1")
-		Connect("CONN2-2")
-		Connect("U1-5")
-		Connect("U1-21")
-		Connect("U1-3")
+		Connect("U1-17")
 	)
-	Net("Disp_on" "(unknown)")
+	Net("SCL" "(unknown)")
 	(
-		Connect("U1-2")
+		Connect("U1-28")
+	)
+	Net("SDA" "(unknown)")
+	(
+		Connect("U1-27")
+	)
+	Net("Serial_reset" "(unknown)")
+	(
+		Connect("C1-2")
+		Connect("CONN2-6")
 	)
 	Net("Tip" "(unknown)")
 	(
 		Connect("U1-1")
+	)
+	Net("Uart_Rx" "(unknown)")
+	(
+		Connect("CONN2-4")
+		Connect("U1-30")
+	)
+	Net("Uart_Tx" "(unknown)")
+	(
+		Connect("CONN2-5")
+		Connect("U1-31")
+	)
+	Net("unnamed_net1" "(unknown)")
+	(
+		Connect("U1-7")
+		Connect("U2-1")
+	)
+	Net("unnamed_net2" "(unknown)")
+	(
+		Connect("U1-8")
+		Connect("U2-2")
+	)
+	Net("unnamed_net3" "(unknown)")
+	(
+		Connect("LED1-2")
+		Connect("R5-2")
+	)
+	Net("Vcc" "(unknown)")
+	(
+		Connect("C10-1")
+		Connect("CONN2-3")
+		Connect("R1-2")
+		Connect("S1-2")
+		Connect("U1-4")
+		Connect("U1-6")
+		Connect("U1-18")
+		Connect("U1-20")
 	)
 )

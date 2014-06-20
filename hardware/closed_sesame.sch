@@ -621,12 +621,12 @@ device=none
 T 44400 54300 5 10 1 1 0 7 1
 value=PB2
 }
-C 63800 51100 1 0 0 connector14-2.sym
+C 45000 45000 1 0 1 connector14-2.sym
 {
-T 64500 57200 5 10 1 1 0 6 1
+T 44300 51100 5 10 1 1 0 0 1
 refdes=CONN1
-T 64100 57150 5 10 0 0 0 0 1
+T 44700 51050 5 10 0 0 0 6 1
 device=CONNECTOR_14
-T 64100 57350 5 10 0 0 0 0 1
+T 44700 51250 5 10 0 0 0 6 1
 footprint=2mm_spaced_14
 }
