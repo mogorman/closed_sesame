@@ -6,7 +6,7 @@ FileVersion[20070407]
 PCB["closed_sesame" 300000 250000]
 
 Grid[500.0 2060 1740 0]
-Cursor[106408 122351 0.000000]
+Cursor[133355 146650 0.000000]
 PolyArea[200000000.000000]
 Thermal[0.500000]
 DRC[600 600 600 600 1500 600]
@@ -1285,7 +1285,7 @@ Element["hidename" "2mm_spaced_14" "CONN1" "unknown" 98223 186530 -32730 -4000 0
 
 	)
 
-Element["hidename" "oshw" "ICO1" "dnp" 122233 151055 -787 98 2 100 "auto"]
+Element["hidename" "oshw" "ICO1" "dnp" 134930 151571 -787 98 2 100 "auto"]
 (
 	Pad[4921 -5315 6299 -7283 600 1200 1800 "" "325" "nopaste"]
 	Pad[4528 -9055 6299 -7283 600 1200 1800 "" "326" "nopaste"]
