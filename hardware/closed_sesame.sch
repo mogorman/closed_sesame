@@ -630,3 +630,7 @@ device=CONNECTOR_14
 T 44700 51250 5 10 0 0 0 6 1
 footprint=2mm_spaced_14
 }
+C 45300 50000 1 90 1 ground.sym
+C 45300 49200 1 90 1 ground.sym
+C 45300 48400 1 90 1 ground.sym
+C 45300 47600 1 90 1 ground.sym
