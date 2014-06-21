@@ -528,3 +528,69 @@ device=none
 T 45900 49400 5 10 1 1 0 1 1
 value=SCL
 }
+C 46200 53600 1 0 1 connector4-2.sym
+{
+T 45500 55700 5 10 1 1 0 0 1
+refdes=CONN3
+T 45900 55650 5 10 0 0 0 6 1
+device=CONNECTOR_4
+T 45900 55850 5 10 0 0 0 6 1
+footprint=JUMPER4
+}
+C 47600 55100 1 0 1 input-2.sym
+{
+T 47600 55300 5 10 0 0 0 6 1
+net=SDA:1
+T 47000 55800 5 10 0 0 0 6 1
+device=none
+T 47100 55200 5 10 1 1 0 1 1
+value=SDA
+}
+C 47600 54700 1 0 1 input-2.sym
+{
+T 47600 54900 5 10 0 0 0 6 1
+net=SCL:1
+T 47000 55400 5 10 0 0 0 6 1
+device=none
+T 47100 54800 5 10 1 1 0 1 1
+value=SCL
+}
+C 47600 54300 1 0 1 input-2.sym
+{
+T 47600 54500 5 10 0 0 0 6 1
+net=GPIO4:1
+T 47000 55000 5 10 0 0 0 6 1
+device=none
+T 47100 54400 5 10 1 1 0 1 1
+value=GPIO4
+}
+C 54200 53500 1 0 1 output-2.sym
+{
+T 53300 53700 5 10 0 0 0 6 1
+net=GPIO4:1
+T 54000 54200 5 10 0 0 0 6 1
+device=none
+T 53300 53600 5 10 1 1 0 7 1
+value=GPIO4
+}
+C 47600 53900 1 0 1 input-2.sym
+{
+T 47600 54100 5 10 0 0 0 6 1
+net=Vbatt:1
+T 47000 54600 5 10 0 0 0 6 1
+device=none
+T 47100 54000 5 10 1 1 0 1 1
+value=Vbatt
+}
+C 45300 45300 1 0 0 output-2.sym
+{
+T 46200 45500 5 10 0 0 0 0 1
+net=Vbatt:1
+T 45500 46000 5 10 0 0 0 0 1
+device=none
+T 46200 45400 5 10 1 1 0 1 1
+value=Vbatt
+}
+N 45000 45400 45300 45400 4
+N 45000 45800 45200 45800 4
+N 45200 45800 45200 45400 4
