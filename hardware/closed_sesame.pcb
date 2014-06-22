@@ -6,7 +6,7 @@ FileVersion[20070407]
 PCB["closed_sesame" 300000 250000]
 
 Grid[1000.0 2060 1740 0]
-Cursor[242060 142740 0.000000]
+Cursor[75060 99740 0.000000]
 PolyArea[200000000.000000]
 Thermal[0.500000]
 DRC[600 600 600 600 1500 600]
@@ -1942,21 +1942,6 @@ Layer(1 "component")
 	(
 		[57000 91600] [181200 91600] [181200 46000] [57000 46000] 
 	)
-	Polygon("clearpoly")
-	(
-		[28634 220140] [28520 220177] [28481 220127] [28488 220063] [28537 220020] 
-		[28602 220026] [28641 220077] 
-	)
-	Polygon("clearpoly")
-	(
-		[55310 237185] [55265 237224] [55202 237219] [55164 237105] [55215 237066] 
-		[55279 237071] 
-	)
-	Polygon("clearpoly")
-	(
-		[95600 238815] [95555 238854] [95492 238849] [95454 238735] [95505 238696] 
-		[95569 238701] 
-	)
 )
 Layer(2 "solder")
 (
@@ -2099,7 +2084,7 @@ Layer(9 "silk")
 	Text[227060 180740 2 100 "Vbatt" "clearline,onsolder"]
 	Text[73060 77740 2 100 "R" "clearline,onsolder"]
 	Text[85060 87740 2 100 "GPIO1" "clearline,onsolder"]
-	Text[87060 97740 2 100 "GPIO2" "clearline,onsolder"]
+	Text[87060 97740 2 100 "GPIO0" "clearline,selected,onsolder"]
 	Text[81060 107740 2 100 "Vcc" "clearline,onsolder"]
 	Text[195060 181740 3 100 "Vbatt" "clearline,onsolder"]
 	Text[180060 181740 3 100 "NC" "clearline,onsolder"]
