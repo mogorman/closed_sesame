@@ -6,7 +6,7 @@ FileVersion[20070407]
 PCB["closed_sesame" 300000 250000]
 
 Grid[1000.0 2060 1740 0]
-Cursor[123060 148740 0.000000]
+Cursor[242060 142740 0.000000]
 PolyArea[200000000.000000]
 Thermal[0.500000]
 DRC[600 600 600 600 1500 600]
@@ -2083,15 +2083,10 @@ Layer(9 "silk")
 	Line[225060 117240 225060 133240 1000 2000 "clearline"]
 	Line[162060 117240 162060 133240 1000 2000 "clearline"]
 	Line[222560 135740 164560 135740 1000 2000 "clearline"]
-	Line[260942 120474 248942 120474 1000 2000 "clearline"]
-	Line[284560 122740 272560 122740 1000 2000 "clearline"]
-	Line[284560 117240 272560 117240 1000 2000 "clearline"]
 	Arc[222560 117240 2500 2500 1000 2000 -90 -90 "clearline"]
 	Arc[222560 133240 2500 2500 1000 2000 180 -90 "clearline"]
 	Arc[164560 117240 2500 2500 1000 2000 0 -90 "clearline"]
 	Arc[164560 133240 2500 2500 1000 2000 90 -90 "clearline"]
-	Arc[265166 120536 4290 4290 1000 2000 0 -90 "clearline"]
-	Arc[265139 119950 4290 4290 1000 2000 90 -90 "clearline"]
 	Text[179060 49240 2 100 "Get your pcbs manufactured" "clearline,onsolder"]
 	Text[178560 55740 2 100 "by hackvana.com" "clearline,onsolder"]
 	Text[230560 92240 2 100 "Module compatible with" "clearline,onsolder"]
@@ -2123,32 +2118,12 @@ Layer(9 "silk")
 	Text[222560 115740 2 100 "Closed Sesame is an" "clearline,onsolder"]
 	Text[222560 128740 2 100 "BTLE lock module" "clearline,onsolder"]
 	Text[222560 121740 2 100 "Arduino compatible" "clearline,onsolder"]
-	Text[259285 113024 2 100 "gEDA" "clearline,onsolder"]
-	Text[284060 123240 2 100 "EDA" "clearline,onsolder"]
-	Text[284471 110947 2 100 "GPL" "clearline,onsolder"]
-	Text[280560 105240 2 100 "Made with:" "clearline,onsolder"]
 	Text[82060 127740 2 100 "GND" "clearline,onsolder"]
 	Text[82060 117740 2 100 "GND" "clearline,onsolder"]
 	Text[178060 73740 2 100 "Made using gEDA" "clearline,onsolder"]
 	Polygon("clearpoly")
 	(
 		[181200 91600] [241560 91600] [241560 46240] [181200 46240] 
-	)
-	Polygon("clearpoly")
-	(
-		[261288 122594] [263289 122594] [263289 117903] [261288 117903] 
-	)
-	Polygon("clearpoly")
-	(
-		[263420 117198] [262403 117198] [262403 123332] [263420 123332] 
-	)
-	Polygon("clearpoly")
-	(
-		[265142 123906] [263190 123906] [263190 116706] [265142 116706] 
-	)
-	Polygon("clearpoly")
-	(
-		[273060 115740] [265060 115740] [265060 124740] [273060 124740] 
 	)
 )
 Layer(10 "silk")
