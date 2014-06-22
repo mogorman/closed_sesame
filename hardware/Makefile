@@ -4,7 +4,7 @@ REV=0.0.1
 STACK=-
 SOLDERMASK=red
 SILKSCREEN=white
-THICKNESS="1.2mm"
+THICKNESS="1.6mm"
 #CUSTOMPCB=/home/mog/nonapt/pcb/src/pcb
 #CUSTOMPCB_ARGS=--photo-mask-colour $(SOLDERMASK) \
 #	       --photo-silk-colour $(SILKSCREEN)  --photo-plating  tinned
