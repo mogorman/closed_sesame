@@ -12,7 +12,7 @@
 #include <avr/pgmspace.h>
 
 uint32_t time;
-uint8_t sequence;
+uint8_t sequence, sequence_check_code;
 uint8_t door_state, check_state;
 
 uint8_t lock[] =        {0xbd, 0x04, 0x0c, 0xe7, 0x03, 0x13};
@@ -33,19 +33,19 @@ uint8_t pair_4[] =   {0xbd, 0x0b, 0x0b, 0xe7, 0x0f, 0x14, 0x06, 0x20, 0x20, 0x33
 
 void check_code_message(uint8_t slot)
 {
-  check_code[7] = slot;
+  check_code[6] = slot;
   send_message(check_code);
 }
 
 void delete_code_message(uint8_t slot)
 {
-  check_code[7] = slot;
+  check_code[6] = slot;
   send_message(delete_code);
 }
 
 void set_code_message(uint8_t *code,uint8_t slot)
 {
-  add_code[7] = slot;
+  add_code[6b] = slot;
   send_message(add_code);
 }
 
@@ -77,6 +77,8 @@ void setup()
  time = 0;
  door_state = 0;
  check_state = 0;
+ sequence = 0;
+ sequence_check_code = 0;
 }
 
 void loop()
@@ -120,6 +122,14 @@ void loop()
     case 'p':
       Serial.print("unpair");
       send_message(unpair);
+      break;
+    case 'c':
+      Serial.print("check code");
+      /* check_code_message(0); */
+      check_code_message(sequence_check_code);
+      sequence_check_code++;
+      /* check_code_message(2); */
+      /* check_code_message(3); */
       break;
     case '0':
       Serial.print("pair_0");
