@@ -85,21 +85,7 @@ void loop()
 {
   uint8_t input, loop, i;
   loop = 0;
-  /* if(check_state) { */
-  /*   check_state = 0; */
-  /*   send_message(status); */
-  /* } else { */
-  /*   check_state = 1; */
-  /*   if(!door_state) { */
-  /*     door_state = 1;//fix */
-  /*     send_message(lock); */
-  /*     Serial.print("\r\n"); */
-  /*   } else { */
-  /*     door_state = 0; */
-  /*     send_message(unlock); */
-  /*   } */
-  /* } */
-  /* sequence++; */
+
   while (Serial.available()) {
     input = Serial.read();
     switch(input) {
@@ -125,11 +111,8 @@ void loop()
       break;
     case 'c':
       Serial.print("check code");
-      /* check_code_message(0); */
       check_code_message(sequence_check_code);
       sequence_check_code++;
-      /* check_code_message(2); */
-      /* check_code_message(3); */
       break;
     case '0':
       Serial.print("pair_0");
