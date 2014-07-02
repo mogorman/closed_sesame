@@ -1,6 +1,6 @@
 PCBNAME=closed_sesame
 AUTHOR="Matthew O'Gorman <mog@rldn.net>  , Tim Heath <crashcartpro@gmail.com>"
-REV=0.0.1
+REV=0.0.2
 STACK=-
 SOLDERMASK=red
 SILKSCREEN=white
