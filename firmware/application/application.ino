@@ -4,12 +4,6 @@
  * equivalent_current_mA = (percent_monthly_discharge_rate / 100) * capacity_maH / (24 * 30) 
  */
 #include <Wire.h>
-#include <SPI.h>
-#include <EEPROM.h>
-#include <avr/sleep.h>
-#include <avr/power.h>
-#include <avr/wdt.h>
-#include <avr/pgmspace.h>
 
 uint32_t time;
 uint8_t sequence, sequence_check_code;
@@ -58,22 +52,22 @@ void send_message(uint8_t *message)
       for(i = 1; i < length - 1; i++) {
   	message[length -1] ^= message[i];
       }
-      Serial.print(" sending ");
+      //      Serial.print(" sending ");
       for(i = 0 ; i < length; i++) {
-	Serial.print("0x");
-	if(message[i] < 16) Serial.print("0");
-	Serial.print(message[i], HEX);
-	Serial.print(" ");
-  	Serial1.write(message[i]);
+	//	Serial.print("0x");
+	//	if(message[i] < 16) Serial.print("0");
+	//	Serial.print(message[i], HEX);
+	//	Serial.print(" ");
+  	Serial.write(message[i]);
       }
-      Serial.println("");
+      //      Serial.println("");
       sequence++;
 }
 
 void setup()
 {
  Serial.begin(9600);
- Serial1.begin(9600);
+ // Serial1.begin(9600);
  time = 0;
  door_state = 0;
  check_state = 0;
@@ -86,75 +80,75 @@ void loop()
   uint8_t input, loop, i;
   loop = 0;
 
-  while (Serial.available()) {
-    input = Serial.read();
-    switch(input) {
-    case 'u':
-      Serial.print("unlock");
-      send_message(unlock);
-      break;
-    case 'l':
-      Serial.print("lock");
-      send_message(lock);
-      break;
-    case 's':
-      Serial.print("status");
-      send_message(status);
-      break;
-    case 'S':
-      Serial.print("battery status");
-      send_message(bat_status);
-      break;
-    case 'p':
-      Serial.print("unpair");
-      send_message(unpair);
-      break;
-    case 'c':
-      Serial.print("check code");
-      check_code_message(sequence_check_code);
-      sequence_check_code++;
-      break;
-    case '0':
-      Serial.print("pair_0");
-      send_message(pair_0);
-      break;
-    case '1':
-      Serial.print("pair_1");
-      send_message(pair_1);
-      break;
-    case '2':
-      Serial.print("pair_2");
-      send_message(pair_2);
-      break;
-    case '3':
-      Serial.print("pair_3");
-      send_message(pair_3);
-      break;
-    case '4':
-      Serial.print("pair_4");
-      send_message(pair_4);
-      break;
-    default:
-      break;
-    }
-  }
-  while (Serial1.available()) {
-    if (!loop) {
-      Serial.print(time);
-      Serial.print(":");
-      Serial.print(sequence, HEX);
-      Serial.print(":\t");
-    }
-    input = Serial1.read();
-    Serial.print("0x");
-    if(input < 16) Serial.print("0");
-    Serial.print(input, HEX);
-    Serial.print(" ");
-    loop = 1;
-  }
-  if (loop) {
-    Serial.println("");
-  }
+  /* while (Serial.available()) { */
+  /*   input = Serial.read(); */
+  /*   switch(input) { */
+  /*   case 'u': */
+  /*     Serial.print("unlock"); */
+  /*     send_message(unlock); */
+  /*     break; */
+  /*   case 'l': */
+  /*     Serial.print("lock"); */
+  /*     send_message(lock); */
+  /*     break; */
+  /*   case 's': */
+  /*     Serial.print("status"); */
+  /*     send_message(status); */
+  /*     break; */
+  /*   case 'S': */
+  /*     Serial.print("battery status"); */
+  /*     send_message(bat_status); */
+  /*     break; */
+  /*   case 'p': */
+  /*     Serial.print("unpair"); */
+  /*     send_message(unpair); */
+  /*     break; */
+  /*   case 'c': */
+  /*     Serial.print("check code"); */
+  /*     check_code_message(sequence_check_code); */
+  /*     sequence_check_code++; */
+  /*     break; */
+  /*   case '0': */
+  /*     Serial.print("pair_0"); */
+  /*     send_message(pair_0); */
+  /*     break; */
+  /*   case '1': */
+  /*     Serial.print("pair_1"); */
+  /*     send_message(pair_1); */
+  /*     break; */
+  /*   case '2': */
+  /*     Serial.print("pair_2"); */
+  /*     send_message(pair_2); */
+  /*     break; */
+  /*   case '3': */
+  /*     Serial.print("pair_3"); */
+  /*     send_message(pair_3); */
+  /*     break; */
+  /*   case '4': */
+  /*     Serial.print("pair_4"); */
+  /*     send_message(pair_4); */
+  /*     break; */
+  /*   default: */
+  /*     break; */
+  /*   } */
+  /* } */
+  /* while (Serial1.available()) { */
+  /*   if (!loop) { */
+  /*     Serial.print(time); */
+  /*     Serial.print(":"); */
+  /*     Serial.print(sequence, HEX); */
+  /*     Serial.print(":\t"); */
+  /*   } */
+  /*   input = Serial1.read(); */
+  /*   Serial.print("0x"); */
+  /*   if(input < 16) Serial.print("0"); */
+  /*   Serial.print(input, HEX); */
+  /*   Serial.print(" "); */
+  /*   loop = 1; */
+  /* } */
+  /* if (loop) { */
+  /*   Serial.println(""); */
+  /* } */
   time++;
   delay(1000);
 }
