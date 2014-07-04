@@ -5,7 +5,7 @@
  */
 #include <Wire.h>
 
-uint32_t time;
+//uint32_t time;
 uint8_t sequence, sequence_check_code;
 uint8_t door_state, check_state;
 
@@ -68,7 +68,7 @@ void setup()
 {
  Serial.begin(9600);
  // Serial1.begin(9600);
- time = 0;
+ // time = 0;
  door_state = 0;
  check_state = 0;
  sequence = 0;
@@ -149,7 +149,7 @@ void loop()
   /* if (loop) { */
   /*   Serial.println(""); */
   /* } */
-  time++;
+  //  time++;
   delay(1000);
 }
 

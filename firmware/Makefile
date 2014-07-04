@@ -20,7 +20,7 @@ endif
 	 if test $$? -ne 0; then \
 	  xvfb-run $(ARDUINO) \
 	   --verbose-build \
-	   --board arduino:avr:leonardo \
+	   --board arduino:RFduino:RFduino \
 	   --pref build.path=`pwd`/build \
 	   --pref sketchbook.path=`pwd` \
 	   --verify `pwd`/application/application.ino; \
