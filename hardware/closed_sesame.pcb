@@ -6,11 +6,11 @@ FileVersion[20070407]
 PCB["closed_sesame" 300000 250000]
 
 Grid[1000.0 2060 1740 0]
-Cursor[121060 135740 0.000000]
+Cursor[84060 185740 0.000000]
 PolyArea[200000000.000000]
 Thermal[0.500000]
 DRC[600 600 600 600 1500 600]
-Flags("showdrc,nameonpcb,clearnew,snappin,showmask")
+Flags("showdrc,nameonpcb,clearnew,snappin")
 Groups("1,c:2,s:3:4:5:6:7:8")
 Styles["Signal,1000,3600,2000,1000:Power,2500,6000,3500,1000:Fat,4000,6000,3500,1000:Skinny,600,2402,1181,600"]
 
@@ -2077,7 +2077,6 @@ Layer(9 "silk")
 	Text[230560 92240 2 100 "Module compatible with" "clearline,onsolder"]
 	Text[230560 99240 2 100 "Kwikset 909,910,911,912" "clearline,onsolder"]
 	Text[230560 105240 2 100 "Locks" "clearline,onsolder"]
-	Text[87060 183240 2 100 "HopeX" "clearline,onsolder"]
 	Text[227060 151740 2 100 "GPIO6" "clearline,onsolder"]
 	Text[227060 161740 2 100 "GPIO5" "clearline,onsolder"]
 	Text[227060 171740 2 100 "GPIO4" "clearline,onsolder"]
