@@ -39,7 +39,7 @@ void delete_code_message(uint8_t slot)
 
 void set_code_message(uint8_t *code,uint8_t slot)
 {
-  add_code[6b] = slot;
+  add_code[6] = slot;
   send_message(add_code);
 }
 
