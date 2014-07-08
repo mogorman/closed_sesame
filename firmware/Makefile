@@ -43,13 +43,13 @@ endif
 	   --pref sketchbook.path=`pwd` \
 	   --verify `pwd`/test/test.ino; \
 	  md5sum test/test.ino > build/test.md5; \
-	  $(ARDUINO_DIR)/hardware/tools/avr/bin/avr-objcopy -O srec -R .eeprom \
+	  $(ARDUINO_DIR)/hardware/tools/avr/bin/avr-objcopy -O ihex -R .eeprom \
 	              build/test.cpp.elf bin/test.hex; \
 	  touch build/.git_empty; \
 	fi
 
 app: compile_app
-	$(AVRDUDE) -patmega32u4 -cavr109 -P$(ARDUINO_PORT) -b57600 -D -Uflash:w:./bin/application.hex:s 
+	wine hardware/arduino/RFduino/RFDLoader.exe -v com1 bin/application.hex
 
 test: compile_test
 	$(AVRDUDE) -patmega32u4 -cavr109 -P$(ARDUINO_PORT) -b57600 -D -Uflash:w:./bin/test.hex:s 
