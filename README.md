@@ -14,4 +14,6 @@ This project's goal is to reverse the protocal used by kwikset locks to allow fo
 [![build status](http://ci.meatstand.com/projects/3/status.png?ref=master)](http://ci.meatstand.com/projects/3?ref=master)
 
 
+TODO
+Reverse engineer protocol to rfduino modules or write own bootloader.
 
