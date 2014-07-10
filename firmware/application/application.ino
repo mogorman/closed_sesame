@@ -150,7 +150,7 @@ void loop()
   /*   Serial.println(""); */
   /* } */
   //  time++;
-  delay(1000);
+  //  delay(1000);
 }
 
 
