@@ -2,6 +2,7 @@
 *.pcb-
 *.hex
 *.wav
+android/RFDuinoTest/.gradle
 hardware/*.png
 hardware/bom
 hardware/gerbers
