@@ -49,6 +49,7 @@ cd ..
 
 cd firmware
 make clean
+cp ~/blah/closed_sesame.txt ~/.arduino15/preferences.txt
 make ARDUINO_DIR=/usr/src/arduino-1.5.6-r2/
 ls bin/application.hex
 if [ "$?" != "0" ]; then
