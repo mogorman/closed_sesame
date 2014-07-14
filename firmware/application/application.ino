@@ -3,8 +3,8 @@
  * Battery discharge formula
  * equivalent_current_mA = (percent_monthly_discharge_rate / 100) * capacity_maH / (24 * 30) 
  */
-#include <Wire.h>
-
+//#include <Wire.h>
+#include <RFduinoBLE.h>
 //uint32_t time;
 uint8_t sequence, sequence_check_code;
 uint8_t door_state, check_state;
@@ -64,93 +64,134 @@ void send_message(uint8_t *message)
       sequence++;
 }
 
-void setup()
-{
- Serial.begin(9600);
- // Serial1.begin(9600);
- // time = 0;
- door_state = 0;
- check_state = 0;
- sequence = 0;
- sequence_check_code = 0;
+
+/*
+This RFduino sketch demonstrates a full bi-directional Bluetooth Low
+Energy 4 connection between an iPhone application and an RFduino.
+
+This sketch works with the rfduinoLedButton iPhone application.
+
+The button on the iPhone can be used to turn the green led on or off.
+The button state of button 1 is transmitted to the iPhone and shown in
+the application.
+*/
+
+/*
+ Copyright (c) 2014 OpenSourceRF.com.  All right reserved.
+
+ This library is free software; you can redistribute it and/or
+ modify it under the terms of the GNU Lesser General Public
+ License as published by the Free Software Foundation; either
+ version 2.1 of the License, or (at your option) any later version.
+
+ This library is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+ See the GNU Lesser General Public License for more details.
+
+ You should have received a copy of the GNU Lesser General Public
+ License along with this library; if not, write to the Free Software
+ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+
+ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+ EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+ MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+ IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
+ CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+ TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+*/
+
+
+
+// pin 3 on the RGB shield is the red led
+// (can be turned on/off from the iPhone app)
+int led = 3;
+
+// pin 5 on the RGB shield is button 1
+// (button press will be shown on the iPhone app)
+int button = 5;
+
+// debounce time (in ms)
+int debounce_time = 10;
+
+// maximum debounce timeout (in ms)
+int debounce_timeout = 100;
+
+void setup() {
+  // led turned on/off from the iPhone app
+  pinMode(led, OUTPUT);
+
+  // button press will be shown on the iPhone app)
+  pinMode(button, INPUT);
+
+  // this is the data we want to appear in the advertisement
+  // (if the deviceName and advertisementData are too long to fix into the 31 byte
+  // ble advertisement packet, then the advertisementData is truncated first down to
+  // a single byte, then it will truncate the deviceName)
+  RFduinoBLE.advertisementData = "ledbtn";
+  
+  // start the BLE stack
+  RFduinoBLE.begin();
 }
 
-void loop()
+int debounce(int state)
 {
-  uint8_t input, loop, i;
-  loop = 0;
+  int start = millis();
+  int debounce_start = start;
+  
+  while (millis() - start < debounce_timeout)
+    if (digitalRead(button) == state)
+    {
+      if (millis() - debounce_start >= debounce_time)
+        return 1;
+    }
+    else
+      debounce_start = millis();
 
-  /* while (Serial.available()) { */
-  /*   input = Serial.read(); */
-  /*   switch(input) { */
-  /*   case 'u': */
-  /*     Serial.print("unlock"); */
-  /*     send_message(unlock); */
-  /*     break; */
-  /*   case 'l': */
-  /*     Serial.print("lock"); */
-  /*     send_message(lock); */
-  /*     break; */
-  /*   case 's': */
-  /*     Serial.print("status"); */
-  /*     send_message(status); */
-  /*     break; */
-  /*   case 'S': */
-  /*     Serial.print("battery status"); */
-  /*     send_message(bat_status); */
-  /*     break; */
-  /*   case 'p': */
-  /*     Serial.print("unpair"); */
-  /*     send_message(unpair); */
-  /*     break; */
-  /*   case 'c': */
-  /*     Serial.print("check code"); */
-  /*     check_code_message(sequence_check_code); */
-  /*     sequence_check_code++; */
-  /*     break; */
-  /*   case '0': */
-  /*     Serial.print("pair_0"); */
-  /*     send_message(pair_0); */
-  /*     break; */
-  /*   case '1': */
-  /*     Serial.print("pair_1"); */
-  /*     send_message(pair_1); */
-  /*     break; */
-  /*   case '2': */
-  /*     Serial.print("pair_2"); */
-  /*     send_message(pair_2); */
-  /*     break; */
-  /*   case '3': */
-  /*     Serial.print("pair_3"); */
-  /*     send_message(pair_3); */
-  /*     break; */
-  /*   case '4': */
-  /*     Serial.print("pair_4"); */
-  /*     send_message(pair_4); */
-  /*     break; */
-  /*   default: */
-  /*     break; */
-  /*   } */
-  /* } */
-  /* while (Serial1.available()) { */
-  /*   if (!loop) { */
-  /*     Serial.print(time); */
-  /*     Serial.print(":"); */
-  /*     Serial.print(sequence, HEX); */
-  /*     Serial.print(":\t"); */
-  /*   } */
-  /*   input = Serial1.read(); */
-  /*   Serial.print("0x"); */
-  /*   if(input < 16) Serial.print("0"); */
-  /*   Serial.print(input, HEX); */
-  /*   Serial.print(" "); */
-  /*   loop = 1; */
-  /* } */
-  /* if (loop) { */
-  /*   Serial.println(""); */
-  /* } */
-  //  time++;
-  //  delay(1000);
+  return 0;
 }
 
+int delay_until_button(int state)
+{
+  // set button edge to wake up on
+  if (state)
+    RFduino_pinWake(button, HIGH);
+  else
+    RFduino_pinWake(button, LOW);
+    
+  do
+    // switch to lower power mode until a button edge wakes us up
+    RFduino_ULPDelay(INFINITE);
+  while (! debounce(state));
+  
+  // if multiple buttons were configured, this is how you would determine what woke you up
+  if (RFduino_pinWoke(button))
+  {
+    // execute code here
+    RFduino_resetPinWake(button);
+  }
+}
 
+void loop() {
+  delay_until_button(HIGH);
+  RFduinoBLE.send(1);
+  
+  delay_until_button(LOW);
+  RFduinoBLE.send(0);
+}
+
+void RFduinoBLE_onDisconnect()
+{
+  // don't leave the led on if they disconnect
+  digitalWrite(led, LOW);
+}
+
+void RFduinoBLE_onReceive(char *data, int len)
+{
+  // if the first byte is 0x01 / on / true
+  if (data[0])
+    digitalWrite(led, HIGH);
+  else
+    digitalWrite(led, LOW);
+}
