@@ -129,7 +129,7 @@ void setup() {
   // (if the deviceName and advertisementData are too long to fix into the 31 byte
   // ble advertisement packet, then the advertisementData is truncated first down to
   // a single byte, then it will truncate the deviceName)
-  RFduinoBLE.advertisementData = "ledbtn";
+  RFduinoBLE.advertisementData = "closed_sesame";
   
   // start the BLE stack
   RFduinoBLE.begin();
