@@ -573,3 +573,7 @@ check codes
 if missing
    add codes
 check door status
+
+AA is worthless and i still don't have my bag...
+
+
