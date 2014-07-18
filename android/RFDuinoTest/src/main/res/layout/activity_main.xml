@@ -123,8 +123,58 @@
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Send One"
-                android:id="@+id/sendOne"
+                android:text="Register"
+                android:id="@+id/sendRegister"
+                android:layout_weight="1"
+                android:enabled="false" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Lock"
+                android:id="@+id/sendLock"
+                android:layout_weight="1"
+                android:enabled="false" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Unlock"
+                android:id="@+id/sendUnlock"
+                android:layout_weight="1"
+                android:enabled="false" />
+
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Status"
+                android:id="@+id/sendStatus"
+                android:layout_weight="1"
+                android:enabled="false" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="AddCode"
+                android:id="@+id/sendCode"
+                android:layout_weight="1"
+                android:enabled="false" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="DelCode"
+                android:id="@+id/sendDelCode"
+                android:layout_weight="1"
+                android:enabled="false" />
+
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Unregister"
+                android:id="@+id/sendUnregister"
                 android:layout_weight="1"
                 android:enabled="false" />
 
