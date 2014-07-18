@@ -93,19 +93,6 @@
             android:id="@+id/textView5"
             android:text="Send"
             android:layout_marginTop="5dip" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Value:"
-            android:id="@+id/textView6" />
-
-        <view
-            class="com.lannbox.rfduinotest.EditData"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/value" />
-
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="fill_parent"
@@ -127,6 +114,13 @@
                 android:id="@+id/sendRegister"
                 android:layout_weight="1"
                 android:enabled="false" />
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:id="@+id/sendButtons">
+
 
             <Button
                 android:layout_width="wrap_content"
@@ -143,6 +137,13 @@
                 android:id="@+id/sendUnlock"
                 android:layout_weight="1"
                 android:enabled="false" />
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:id="@+id/sendButtons">
+
 
 
             <Button
@@ -160,6 +161,15 @@
                 android:id="@+id/sendCode"
                 android:layout_weight="1"
                 android:enabled="false" />
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:id="@+id/sendButtons">
+
+
+
 
             <Button
                 android:layout_width="wrap_content"
@@ -177,6 +187,15 @@
                 android:id="@+id/sendUnregister"
                 android:layout_weight="1"
                 android:enabled="false" />
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:id="@+id/sendButtons">
+
+
+
 
             <Button
                 android:layout_width="wrap_content"
