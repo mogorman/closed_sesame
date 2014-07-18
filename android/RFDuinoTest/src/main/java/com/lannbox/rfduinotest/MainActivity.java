@@ -152,18 +152,18 @@ public class MainActivity extends Activity implements BluetoothAdapter.LeScanCal
         });
 
         // Send
-        valueEdit = (EditData) findViewById(R.id.value);
-        valueEdit.setImeOptions(EditorInfo.IME_ACTION_SEND);
-        valueEdit.setOnEditorActionListener(new TextView.OnEditorActionListener() {
-            @Override
-            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
-                if (actionId == EditorInfo.IME_ACTION_SEND) {
-                    sendValueButton.callOnClick();
-                    return true;
-                }
-                return false;
-            }
-        });
+        // valueEdit = (EditData) findViewById(R.id.value);
+        // valueEdit.setImeOptions(EditorInfo.IME_ACTION_SEND);
+        // valueEdit.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+        //     @Override
+        //     public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+        //         if (actionId == EditorInfo.IME_ACTION_SEND) {
+        //             sendValueButton.callOnClick();
+        //             return true;
+        //         }
+        //         return false;
+        //     }
+        // });
 
         sendZeroButton = (Button) findViewById(R.id.sendZero);
         sendZeroButton.setOnClickListener(new View.OnClickListener() {
