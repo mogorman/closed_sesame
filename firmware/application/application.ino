@@ -195,4 +195,58 @@ void RFduinoBLE_onReceive(char *data, int len)
     digitalWrite(led, HIGH);
   else
     digitalWrite(led, LOW);
+
+  switch(data[0]) {
+    case 0:
+      RFduinoBLE.send('U');
+      send_message(unpair);
+      break;
+    case 2:
+      RFduinoBLE.send('l');
+      send_message(lock);
+      break;
+    case 3:
+      RFduinoBLE.send('u');
+      send_message(unlock);
+      break;
+    case 4:
+      RFduinoBLE.send('s');
+      send_message(status);
+      break;
+    /* case 'S': */
+    /*   Serial.print("battery status"); */
+    /*   send_message(bat_status); */
+    /*   break; */
+    case 1:
+      RFduinoBLE.send('r');
+      send_message(pair_2);
+      break;
+    /* case 'c': */
+    /*   Serial.print("check code"); */
+    /*   check_code_message(sequence_check_code); */
+    /*   sequence_check_code++; */
+    /*   break; */
+    /* case '0': */
+    /*   Serial.print("pair_0"); */
+    /*   send_message(pair_0); */
+    /*   break; */
+    /* case '1': */
+    /*   Serial.print("pair_1"); */
+    /*   send_message(pair_1); */
+    /*   break; */
+    /* case '2': */
+    /*   Serial.print("pair_2"); */
+    /*   send_message(pair_2); */
+    /*   break; */
+    /* case '3': */
+    /*   Serial.print("pair_3"); */
+    /*   send_message(pair_3); */
+    /*   break; */
+    /* case '4': */
+    /*   Serial.print("pair_4"); */
+    /*   send_message(pair_4); */
+    /*   break; */
+    default:
+      break;
+  }
 }
