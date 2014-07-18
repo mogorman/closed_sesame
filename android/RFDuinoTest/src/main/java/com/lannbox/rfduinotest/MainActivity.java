@@ -46,6 +46,14 @@ public class MainActivity extends Activity implements BluetoothAdapter.LeScanCal
     //    private EditData valueEdit;
     //    private Button sendZeroButton;
     //    private Button sendValueButton;
+    private Button sendUnregisterButton;  //0
+    private Button sendRegisterButton; //1
+    private Button sendLockButton; //2
+    private Button sendUnlockButton; //3
+    private Button sendStatusButton;//4
+    private Button sendAddCodeButton;//5
+    private Button sendDeleteCodeButton;//6
+
     private Button clearButton;
     private LinearLayout dataLayout;
 
@@ -165,13 +173,68 @@ public class MainActivity extends Activity implements BluetoothAdapter.LeScanCal
         //     }
         // });
 
-        // sendZeroButton = (Button) findViewById(R.id.sendZero);
-        // sendZeroButton.setOnClickListener(new View.OnClickListener() {
-        //     @Override
-        //     public void onClick(View v) {
-        //         rfduinoService.send(new byte[]{0});
-        //     }
-        // });
+        sendUnregisterButton = (Button) findViewById(R.id.sendUnregister);
+        sendUnregisterButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                rfduinoService.send(new byte[]{0});
+            }
+        });
+
+
+        sendRegisterButton = (Button) findViewById(R.id.sendRegister);
+        sendRegisterButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                rfduinoService.send(new byte[]{1});
+            }
+        });
+
+
+        sendLockButton = (Button) findViewById(R.id.sendLock);
+        sendLockButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                rfduinoService.send(new byte[]{2});
+            }
+        });
+
+
+        sendUnlockButton = (Button) findViewById(R.id.sendUnlock);
+        sendUnlockButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                rfduinoService.send(new byte[]{3});
+            }
+        });
+
+
+        sendStatusButton = (Button) findViewById(R.id.sendStatus);
+        sendStatusButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                rfduinoService.send(new byte[]{4});
+            }
+        });
+
+
+        sendAddCodeButton = (Button) findViewById(R.id.sendAddCode);
+        sendAddCodeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                rfduinoService.send(new byte[]{5});
+            }
+        });
+
+
+        sendDeleteCodeButton = (Button) findViewById(R.id.sendDeleteCode);
+        sendDeleteCodeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                rfduinoService.send(new byte[]{6});
+            }
+        });
+
 
         // sendValueButton = (Button) findViewById(R.id.sendValue);
         // sendValueButton.setOnClickListener(new View.OnClickListener() {
