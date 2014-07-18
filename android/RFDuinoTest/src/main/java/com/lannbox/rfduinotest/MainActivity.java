@@ -165,21 +165,21 @@ public class MainActivity extends Activity implements BluetoothAdapter.LeScanCal
         //     }
         // });
 
-        sendZeroButton = (Button) findViewById(R.id.sendZero);
-        sendZeroButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                rfduinoService.send(new byte[]{0});
-            }
-        });
+        // sendZeroButton = (Button) findViewById(R.id.sendZero);
+        // sendZeroButton.setOnClickListener(new View.OnClickListener() {
+        //     @Override
+        //     public void onClick(View v) {
+        //         rfduinoService.send(new byte[]{0});
+        //     }
+        // });
 
-        sendValueButton = (Button) findViewById(R.id.sendValue);
-        sendValueButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                rfduinoService.send(valueEdit.getData());
-            }
-        });
+        // sendValueButton = (Button) findViewById(R.id.sendValue);
+        // sendValueButton.setOnClickListener(new View.OnClickListener() {
+        //     @Override
+        //     public void onClick(View v) {
+        //         rfduinoService.send(valueEdit.getData());
+        //     }
+        // });
 
         // Receive
         clearButton = (Button) findViewById(R.id.clearData);

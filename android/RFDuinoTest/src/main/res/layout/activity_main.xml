@@ -99,11 +99,12 @@
             android:layout_height="fill_parent"
             android:id="@+id/sendButtons">
 
+
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Send Zero"
-                android:id="@+id/sendZero"
+                android:text="Unregister"
+                android:id="@+id/sendUnregister"
                 android:layout_weight="1"
                 android:enabled="false" />
 
@@ -129,6 +130,12 @@
                 android:id="@+id/sendLock"
                 android:layout_weight="1"
                 android:enabled="false" />
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:id="@+id/sendButtons">
 
             <Button
                 android:layout_width="wrap_content"
@@ -154,13 +161,6 @@
                 android:layout_weight="1"
                 android:enabled="false" />
 
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="AddCode"
-                android:id="@+id/sendCode"
-                android:layout_weight="1"
-                android:enabled="false" />
         </LinearLayout>
         <LinearLayout
             android:orientation="horizontal"
@@ -169,6 +169,13 @@
             android:id="@+id/sendButtons">
 
 
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="AddCode"
+                android:id="@+id/sendCode"
+                android:layout_weight="1"
+                android:enabled="false" />
 
 
             <Button
@@ -179,34 +186,7 @@
                 android:layout_weight="1"
                 android:enabled="false" />
 
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Unregister"
-                android:id="@+id/sendUnregister"
-                android:layout_weight="1"
-                android:enabled="false" />
         </LinearLayout>
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:id="@+id/sendButtons">
-
-
-
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Send Value"
-                android:id="@+id/sendValue"
-                android:layout_weight="1"
-                android:enabled="false" />
-
-        </LinearLayout>
-
         <TextView
             style="?android:attr/listSeparatorTextViewStyle"
             android:layout_width="fill_parent"
