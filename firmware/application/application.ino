@@ -106,7 +106,7 @@ the application.
 
 // pin 3 on the RGB shield is the red led
 // (can be turned on/off from the iPhone app)
-int led = 3;
+int led = 2;
 
 // pin 5 on the RGB shield is button 1
 // (button press will be shown on the iPhone app)
@@ -129,7 +129,7 @@ void setup() {
   // (if the deviceName and advertisementData are too long to fix into the 31 byte
   // ble advertisement packet, then the advertisementData is truncated first down to
   // a single byte, then it will truncate the deviceName)
-  RFduinoBLE.advertisementData = "closed_sesame";
+  RFduinoBLE.advertisementData = "csesame";
   
   // start the BLE stack
   RFduinoBLE.begin();
