@@ -43,9 +43,9 @@ public class MainActivity extends Activity implements BluetoothAdapter.LeScanCal
     private TextView deviceInfoText;
     private TextView connectionStatusText;
     private Button connectButton;
-    private EditData valueEdit;
-    private Button sendZeroButton;
-    private Button sendValueButton;
+    //    private EditData valueEdit;
+    //    private Button sendZeroButton;
+    //    private Button sendValueButton;
     private Button clearButton;
     private LinearLayout dataLayout;
 
@@ -266,8 +266,8 @@ public class MainActivity extends Activity implements BluetoothAdapter.LeScanCal
         connectButton.setEnabled(bluetoothDevice != null && state == STATE_DISCONNECTED);
 
         // Send
-        sendZeroButton.setEnabled(connected);
-        sendValueButton.setEnabled(connected);
+	//        sendZeroButton.setEnabled(connected);
+	//        sendValueButton.setEnabled(connected);
     }
 
     private void addData(byte[] data) {
