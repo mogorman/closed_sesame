@@ -124,7 +124,7 @@ void setup() {
 
   // button press will be shown on the iPhone app)
   pinMode(button, INPUT);
-
+  Serial.begin(9600);
   // this is the data we want to appear in the advertisement
   // (if the deviceName and advertisementData are too long to fix into the 31 byte
   // ble advertisement packet, then the advertisementData is truncated first down to
@@ -190,6 +190,7 @@ void RFduinoBLE_onDisconnect()
 void RFduinoBLE_onReceive(char *data, int len)
 {
   // if the first byte is 0x01 / on / true
+  RFduinoBLE.send(data[0]);
   if (data[0])
     digitalWrite(led, HIGH);
   else
