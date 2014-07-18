@@ -64,6 +64,7 @@ cd ..
 
 cd ..
 cd android/RFDuinoTest
+JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64/  ANDROID_HOME=/opt/adt-bundle-linux-x86_64-20140702/sdk/ gradle clean
 JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64/  ANDROID_HOME=/opt/adt-bundle-linux-x86_64-20140702/sdk/ gradle build
 cd build/apk/
 copy_files RFDuinoTest-debug-unaligned.apk ~/artifacts/closed_sesame/closed_sesame.apk
