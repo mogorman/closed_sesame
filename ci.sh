@@ -68,6 +68,12 @@ JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64/  ANDROID_HOME=/opt/adt-bundle-linux
 JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64/  ANDROID_HOME=/opt/adt-bundle-linux-x86_64-20140702/sdk/ gradle build
 cd build/apk/
 copy_files RFDuinoTest-debug-unaligned.apk ~/artifacts/closed_sesame/closed_sesame.apk
+ls RFDuinoTest-debug-unaligned.apk
+if [ "$?" != "0" ]; then
+    echo "I failed to create all the files I should have. build failed"
+    exit 1
+fi
+
 cd ../..
 cd ../..
 

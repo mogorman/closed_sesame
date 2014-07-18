@@ -329,8 +329,8 @@ public class MainActivity extends Activity implements BluetoothAdapter.LeScanCal
         connectButton.setEnabled(bluetoothDevice != null && state == STATE_DISCONNECTED);
 
         // Send
-	sendUnregisteredButton.setEnabled(connected);
-	sendRegisteredButton.setEnabled(connected);
+	sendUnregisterButton.setEnabled(connected);
+	sendRegisterButton.setEnabled(connected);
 	sendLockButton.setEnabled(connected);
 	sendUnlockButton.setEnabled(connected);
 	sendStatusButton.setEnabled(connected);
