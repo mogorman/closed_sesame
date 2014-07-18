@@ -123,6 +123,14 @@
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:text="Send One"
+                android:id="@+id/sendOne"
+                android:layout_weight="1"
+                android:enabled="false" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:text="Send Value"
                 android:id="@+id/sendValue"
                 android:layout_weight="1"
