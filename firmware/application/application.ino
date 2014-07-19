@@ -110,7 +110,7 @@ int led = 2;
 
 // pin 5 on the RGB shield is button 1
 // (button press will be shown on the iPhone app)
-int button = 5;
+int button = 3;
 
 // debounce time (in ms)
 int debounce_time = 10;
@@ -120,7 +120,7 @@ int debounce_timeout = 100;
 
 void setup() {
   // led turned on/off from the iPhone app
-  pinMode(led, OUTPUT);
+  //  pinMode(led, OUTPUT);
 
   // button press will be shown on the iPhone app)
   pinMode(button, INPUT);
@@ -174,43 +174,52 @@ int delay_until_button(int state)
 }
 
 void loop() {
-  delay_until_button(HIGH);
-  RFduinoBLE.send(1);
+  uint8_t input;
+  //  delay(100);
+  while (Serial.available()) {
+    input = Serial.read();
+  }
+  //  delay_until_button(HIGH);
+  //  RFduinoBLE.send(1);
   
-  delay_until_button(LOW);
-  RFduinoBLE.send(0);
+  //  delay_until_button(LOW);
+  //  RFduinoBLE.send(0);
 }
 
 void RFduinoBLE_onDisconnect()
 {
   // don't leave the led on if they disconnect
-  digitalWrite(led, LOW);
+  //  digitalWrite(led, LOW);
 }
 
 void RFduinoBLE_onReceive(char *data, int len)
 {
   // if the first byte is 0x01 / on / true
   RFduinoBLE.send(data[0]);
-  if (data[0])
-    digitalWrite(led, HIGH);
-  else
-    digitalWrite(led, LOW);
+  //  if (data[0])
+    //    digitalWrite(led, HIGH);
+    //  else
+    //    digitalWrite(led, LOW);
 
   switch(data[0]) {
     case 0:
       RFduinoBLE.send('U');
+      delay(100);
       send_message(unpair);
       break;
     case 2:
       RFduinoBLE.send('l');
+      delay(100);
       send_message(lock);
       break;
     case 3:
       RFduinoBLE.send('u');
+      delay(100);
       send_message(unlock);
       break;
     case 4:
       RFduinoBLE.send('s');
+      delay(100);
       send_message(status);
       break;
     /* case 'S': */
