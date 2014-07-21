@@ -5,7 +5,7 @@
  */
 //#include <Wire.h>
 #include <RFduinoBLE.h>
-//uint32_t time;
+
 uint8_t sequence, sequence_check_code;
 uint8_t door_state, check_state;
 
@@ -52,15 +52,9 @@ void send_message(uint8_t *message)
       for(i = 1; i < length - 1; i++) {
   	message[length -1] ^= message[i];
       }
-      //      Serial.print(" sending ");
       for(i = 0 ; i < length; i++) {
-	//	Serial.print("0x");
-	//	if(message[i] < 16) Serial.print("0");
-	//	Serial.print(message[i], HEX);
-	//	Serial.print(" ");
   	Serial.write(message[i]);
       }
-      //      Serial.println("");
       sequence++;
 }
 
@@ -196,11 +190,6 @@ void RFduinoBLE_onReceive(char *data, int len)
 {
   // if the first byte is 0x01 / on / true
   RFduinoBLE.send(data[0]);
-  //  if (data[0])
-    //    digitalWrite(led, HIGH);
-    //  else
-    //    digitalWrite(led, LOW);
-
   switch(data[0]) {
     case 0:
       RFduinoBLE.send('U');
@@ -230,31 +219,6 @@ void RFduinoBLE_onReceive(char *data, int len)
       RFduinoBLE.send('r');
       send_message(pair_2);
       break;
-    /* case 'c': */
-    /*   Serial.print("check code"); */
-    /*   check_code_message(sequence_check_code); */
-    /*   sequence_check_code++; */
-    /*   break; */
-    /* case '0': */
-    /*   Serial.print("pair_0"); */
-    /*   send_message(pair_0); */
-    /*   break; */
-    /* case '1': */
-    /*   Serial.print("pair_1"); */
-    /*   send_message(pair_1); */
-    /*   break; */
-    /* case '2': */
-    /*   Serial.print("pair_2"); */
-    /*   send_message(pair_2); */
-    /*   break; */
-    /* case '3': */
-    /*   Serial.print("pair_3"); */
-    /*   send_message(pair_3); */
-    /*   break; */
-    /* case '4': */
-    /*   Serial.print("pair_4"); */
-    /*   send_message(pair_4); */
-    /*   break; */
     default:
       break;
   }
