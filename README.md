@@ -21,5 +21,4 @@ This project's goal is to reverse the protocal used by kwikset locks to allow fo
 TODO
 Reverse engineer protocol to rfduino modules or write own bootloader.
 Emulate rtc and eeprom storage over i2c interface
-sleep code
-btle code
+fix issue with power cycling
